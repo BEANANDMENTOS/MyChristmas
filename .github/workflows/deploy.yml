@@ -15,6 +15,6 @@ jobs:
       - run: npm i
       - run: npm run build
       - run: ls
-      - run: ssh -i "$EC2KEY" ubuntu@ec2-54-254-221-15.ap-southeast-1.compute.amazonaws.com
-      - run: ls
+      # - run: ssh -i "$EC2KEY" ubuntu@ec2-54-254-221-15.ap-southeast-1.compute.amazonaws.com
+      - run: scp -i "${{ secrets.EC2KEY }}" -r ubuntu@ec2-54-254-221-15.ap-southeast-1.compute.amazonaws.com dist/
 
